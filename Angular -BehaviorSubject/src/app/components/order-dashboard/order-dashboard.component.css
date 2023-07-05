@@ -1,0 +1,13 @@
+.card {
+  background-color: antiquewhite;
+  height: 5rem;
+  width: 8rem;
+  margin: 0 1rem;
+  padding: 0.5rem;
+}
+.cards {
+  display: flex;
+}
+.info {
+  margin-top: 1rem;
+}

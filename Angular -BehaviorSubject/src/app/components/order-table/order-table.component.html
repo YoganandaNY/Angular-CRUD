@@ -1,0 +1,23 @@
+<h5>Table Component</h5>
+
+<table>
+  <tr>
+    <th>Item Available</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let item of itemList">
+    <td>{{ item.name }}</td>
+    <td>
+      <button type="button" *ngIf="!item.inCart" (click)="addToCart(item)">
+        Add To Cart
+      </button>
+      <button
+        type="button"
+        *ngIf="!item.isFavourite"
+        (click)="addToWishList(item)"
+      >
+        Add To WishList
+      </button>
+    </td>
+  </tr>
+</table>
