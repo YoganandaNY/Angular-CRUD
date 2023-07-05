@@ -2,13 +2,13 @@
 
 As we know multiple components share the common data and always need updated shared data. In such scenarios most of the time BehaviorSubject is used which acts as a single store to hold updated shared data.
 
-BehaviorSubject is both observer and type of observable.
-BehaviorSubject always needs an initial/default value.
-Every observer on subscribe gets the current value.
-The current value is either the latest value emitted by the source observable using the next() method or the initial/default value.
-Let’s implement BehaviorSubject to understand a concept better!
+  * BehaviorSubject is both observer and type of observable.
+  * BehaviorSubject always needs an initial/default value.
+  * Every observer on subscribe gets the current value.
+  * The current value is either the latest value emitted by the source observable using the next() method or the initial/default value.
+-  Let’s implement BehaviorSubject to understand a concept better!
 
-For e.g In the order tracking app, display the total items in the cart and total items in the wish list on the UI in the header and dashboard section based on user action.
+- For e.g In the order tracking app, display the total items in the cart and total items in the wish list on the UI in the header and dashboard section based on user action.
 
 # MyCrudApp
 
