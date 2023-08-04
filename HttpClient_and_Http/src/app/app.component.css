@@ -1,0 +1,16 @@
+div {
+  text-align: center;
+}
+
+.home {
+  border: 1px solid black;
+}
+.header {
+  background-color: lightgrey;
+}
+.dashboard {
+  margin: 1rem;
+}
+.table {
+  margin: 0 0 1rem;
+}
