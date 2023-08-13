@@ -1,0 +1,21 @@
+.table-div {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  margin-top: 80px;
+}
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+th.mat-header-cell {
+  text-align: left;
+  max-width: 300px;
+}
+
+.hide-not-found-msg {
+  display: none;
+}

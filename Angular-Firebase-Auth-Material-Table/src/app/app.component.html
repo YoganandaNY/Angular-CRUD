@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button [routerLink]="['/home']">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span>Angular Firebase Authentication</span>
+  <span class="example-spacer"></span>
+  <div style="display: flex; gap: 10px">
+    <button
+      *ngIf="!currentLoggedInUserEmail && loginButtonFlag"
+      mat-raised-button
+      color="accent"
+      [routerLink]="['/login']"
+    >
+      Login
+    </button>
+    <button
+      *ngIf="currentLoggedInUserEmail && logoutButtonFlag"
+      mat-raised-button
+      color="accent"
+      (click)="confirmLogoutDialog()"
+    >
+      Logout
+    </button>
+  </div>
+</mat-toolbar>
+
+<router-outlet> </router-outlet>

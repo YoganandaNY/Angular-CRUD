@@ -1,0 +1,125 @@
+<div
+  style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+  "
+>
+  <div style="font-size: 1.2rem; font-family: 'Times New Roman', Times, serif">
+    You have successfully logged in: Congrats! You are inside the project,
+    <br />
+    <br />
+    <div>
+      This table data is coming from firebase data base, going further will
+      enhance more features like,
+    </div>
+    <ul>
+      <li>social media login: google/facebook</li>
+      <li>forget password (reset password)</li>
+      <li>protecing routes using auth gaurd- canActivate</li>
+      <li>Will use local storage for better authentication</li>
+    </ul>
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="10px" fxLayout.xs="column">
+    <div fxFlex fxFlexAlign="left"></div>
+    <div fxFlex>
+      <mat-form-field
+        class="form-field"
+        style="width: 400px; margin-right: 51rem"
+      >
+        <input
+          matInput
+          type="text"
+          placeholder="Search for Id"
+          (keyup)="applyFilter($event.target.value)"
+        />
+        <!-- <button
+          mat-button
+          *ngIf="value"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="value = ''; dataSource.filter = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button> -->
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="table-div" style="margin-top: 25px">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="maidenName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>UserName</th>
+        <td mat-cell *matCellDef="let element">{{ element.maidenName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="birthDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Birth Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.birthDate }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="department">
+        <th mat-header-cell *matHeaderCellDef>Department</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.company.department }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <td mat-cell *matCellDef="let element">{{ element.company.title }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="university">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>University</th>
+        <td mat-cell *matCellDef="let element">{{ element.university }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef>Image</th>
+        <td mat-cell *matCellDef="let element">
+          <img src="{{ element.image }}" style="width: 40px" />
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="noData">
+        <mat-footer-cell
+          *matFooterCellDef
+          [attr.colspan]="displayedColumns.length"
+        >
+          <div>No records found.</div>
+        </mat-footer-cell>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <mat-footer-row
+        *matFooterRowDef="['noData']"
+        [ngClass]="{
+          'hide-not-found-msg': !(
+            dataSource !== null && dataSource.filteredData.length === 0
+          )
+        }"
+      >
+      </mat-footer-row>
+    </table>
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</div>
